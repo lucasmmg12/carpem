@@ -17,8 +17,7 @@ import {
   Mail,
   Phone,
   Calendar,
-  ArrowRight,
-  ExternalLink
+  ArrowRight
 } from 'lucide-react';
 
 const Header = () => {
