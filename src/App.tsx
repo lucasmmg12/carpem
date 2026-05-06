@@ -80,40 +80,50 @@ const Header = () => {
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center pt-20 pb-12 lg:pt-32 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?auto=format&fit=crop&w=2070&q=80" 
-          alt="Minería a Cielo Abierto en los Andes" 
-          className="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2070&q=80" 
+          alt="Operación Minera" 
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/90 via-[#1a1a1a]/70 to-[#1a1a1a]/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/95 via-[#1a1a1a]/80 to-[#1a1a1a]/60 lg:bg-gradient-to-r lg:from-[#1a1a1a]/95 lg:via-[#1a1a1a]/80 lg:to-[#1a1a1a]/40"></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 lg:mt-0">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-institutional-accent/20 border border-institutional-accent/40 text-institutional-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 bg-institutional-accent/20 border border-institutional-accent/40 text-institutional-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm animate-fade-in-up">
             <span className="w-2 h-2 bg-institutional-accent rounded-full animate-pulse"></span>
             San Juan, Argentina
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg animate-fade-in-up" style={{animationDelay: '100ms'}}>
             Cámara de Prestadores de Servicios Mineros y Energéticos
           </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed animate-fade-in-up" style={{animationDelay: '200ms'}}>
             Representamos empresas. Conectamos capacidades. Impulsamos desarrollo. Únase a la red de proveedores más sólida de la región.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-institutional-accent text-white px-8 py-3.5 rounded-lg hover:bg-institutional-accent/90 transition-all shadow-lg font-semibold text-lg flex justify-center items-center hover:scale-105 duration-200">
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{animationDelay: '300ms'}}>
+            <button className="bg-institutional-accent text-white px-8 py-4 rounded-lg hover:bg-institutional-accent/90 transition-all shadow-lg font-semibold text-lg flex justify-center items-center hover:scale-105 duration-200">
               Quiero asociarme <ChevronRight className="ml-2 w-5 h-5" />
             </button>
-            <button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-3.5 rounded-lg hover:bg-white/20 transition-all shadow-sm font-semibold text-lg flex justify-center items-center">
+            <button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/20 transition-all shadow-sm font-semibold text-lg flex justify-center items-center">
               Explorar empresas
             </button>
           </div>
-          <div className="flex items-center gap-8 mt-12 pt-8 border-t border-white/10">
-            <div><span className="text-3xl font-extrabold text-institutional-accent">80+</span><p className="text-sm text-gray-400">Empresas asociadas</p></div>
-            <div><span className="text-3xl font-extrabold text-institutional-accent">15</span><p className="text-sm text-gray-400">Rubros representados</p></div>
-            <div><span className="text-3xl font-extrabold text-institutional-accent">20+</span><p className="text-sm text-gray-400">Años de trayectoria</p></div>
+          
+          <div className="grid grid-cols-3 gap-4 lg:gap-8 mt-12 pt-8 border-t border-white/10 animate-fade-in-up" style={{animationDelay: '400ms'}}>
+            <div className="text-center sm:text-left">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-extrabold text-institutional-accent">80+</span>
+              <p className="text-xs sm:text-sm text-gray-400 mt-1">Empresas asociadas</p>
+            </div>
+            <div className="text-center sm:text-left border-l border-white/10 pl-4 lg:pl-8">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-extrabold text-institutional-accent">15</span>
+              <p className="text-xs sm:text-sm text-gray-400 mt-1">Rubros representados</p>
+            </div>
+            <div className="text-center sm:text-left border-l border-white/10 pl-4 lg:pl-8">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-extrabold text-institutional-accent">20+</span>
+              <p className="text-xs sm:text-sm text-gray-400 mt-1">Años de trayectoria</p>
+            </div>
           </div>
         </div>
       </div>
@@ -490,18 +500,38 @@ const Contacto = () => {
 const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // SVG Avatar de Obrero con casco blanco
+  const WorkerAvatar = ({ className = "w-6 h-6" }) => (
+    <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
+      {/* Fondo/Hombros */}
+      <path d="M20 95 C20 70 80 70 80 95 Z" fill="#4bb0d3" />
+      {/* Chaleco reflectante */}
+      <path d="M35 95 L50 75 L65 95 Z" fill="#ac9f3c" />
+      <path d="M40 95 L50 82 L60 95 Z" fill="#fff" opacity="0.3" />
+      {/* Cara */}
+      <circle cx="50" cy="55" r="18" fill="#fcdbb6" />
+      {/* Casco Blanco */}
+      <path d="M30 45 C30 20 70 20 70 45 L75 48 C75 52 25 52 25 48 Z" fill="#ffffff" />
+      <path d="M32 40 L68 40" stroke="#f0f0f0" strokeWidth="2" />
+      {/* Gafas de seguridad (opcional, le da toque profesional) */}
+      <rect x="38" y="50" width="10" height="4" rx="1" fill="#2c2c2c" />
+      <rect x="52" y="50" width="10" height="4" rx="1" fill="#2c2c2c" />
+      <path d="M48 52 L52 52" stroke="#2c2c2c" strokeWidth="1.5" />
+    </svg>
+  );
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
       {isOpen ? (
         <div className="bg-white w-80 sm:w-96 rounded-lg shadow-2xl border border-gray-100 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5">
           <div className="bg-institutional-primary text-white p-4 flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <MessageSquare className="w-4 h-4" />
+              <div className="w-10 h-10 bg-institutional-light rounded-full flex items-center justify-center border-2 border-institutional-accent overflow-hidden">
+                <WorkerAvatar className="w-8 h-8 mt-2" />
               </div>
               <div>
-                <h4 className="font-medium text-sm">Asistente CARPEM</h4>
-                <p className="text-xs text-white/70">Potenciado por IA</p>
+                <h4 className="font-medium text-sm">Asesor CARPEM</h4>
+                <p className="text-xs text-institutional-secondary">En línea</p>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white transition-colors">
@@ -510,9 +540,12 @@ const AIAssistant = () => {
           </div>
           
           <div className="p-4 h-64 bg-institutional-light overflow-y-auto">
-            <div className="flex mb-4">
+            <div className="flex mb-4 gap-2">
+              <div className="w-8 h-8 rounded-full bg-white flex-shrink-0 flex items-center justify-center border border-gray-200 overflow-hidden">
+                 <WorkerAvatar className="w-6 h-6 mt-1" />
+              </div>
               <div className="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-institutional-dark border border-gray-100 max-w-[85%]">
-                Hola, soy el asistente virtual de CARPEM. ¿En qué te puedo ayudar? Puedes preguntarme cómo asociar tu empresa, conocer a nuestra comisión directiva o buscar proveedores específicos.
+                Hola, soy el asesor virtual de CARPEM. ¿En qué te puedo ayudar? Puedes preguntarme cómo asociar tu empresa, conocer a nuestra comisión directiva o buscar proveedores específicos.
               </div>
             </div>
           </div>
@@ -533,10 +566,11 @@ const AIAssistant = () => {
       ) : (
         <button 
           onClick={() => setIsOpen(true)}
-          className="bg-institutional-primary text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 hover:bg-institutional-primary/90 transition-all flex items-center justify-center group"
+          className="bg-institutional-primary text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group relative border-2 border-institutional-accent overflow-hidden"
         >
-          <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
-          <span className="absolute -top-2 -right-2 w-4 h-4 bg-institutional-accent rounded-full border-2 border-white"></span>
+          <div className="absolute inset-0 bg-institutional-primary z-0"></div>
+          <WorkerAvatar className="w-11 h-11 relative z-10 mt-2 group-hover:scale-110 transition-transform" />
+          <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-institutional-primary z-20"></span>
         </button>
       )}
     </div>
