@@ -30,9 +30,9 @@ const Header = () => {
             {/* Logo from public folder */}
             <a href="#" className="flex items-center">
               <img 
-                src="/2026-05-06_16-31.jpg" 
+                src="/logo-transparent.png" 
                 alt="Logo CARPEM" 
-                className="h-12 w-auto object-contain" 
+                className="h-14 w-auto object-contain" 
               />
             </a>
           </div>
@@ -585,9 +585,9 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <img 
-                src="/2026-05-06_16-31.jpg" 
+                src="/logo-transparent.png" 
                 alt="Logo CARPEM" 
-                className="h-16 w-auto object-contain bg-white/10 rounded-lg p-2" 
+                className="h-20 w-auto object-contain" 
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
