@@ -81,31 +81,40 @@ const Header = () => {
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-institutional-light">
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1574883395982-f673e440eece?auto=format&fit=crop&w=2070&q=80" 
-          alt="Minería a Cielo Abierto" 
-          className="w-full h-full object-cover opacity-15"
+          src="https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?auto=format&fit=crop&w=2070&q=80" 
+          alt="Minería a Cielo Abierto en los Andes" 
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-institutional-light via-institutional-light/95 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/90 via-[#1a1a1a]/70 to-[#1a1a1a]/40"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-institutional-primary leading-tight mb-6">
-            Cámara de Prestadores de Servicios Mineros y Energéticos de San Juan.
+          <div className="inline-flex items-center gap-2 bg-institutional-accent/20 border border-institutional-accent/40 text-institutional-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+            <span className="w-2 h-2 bg-institutional-accent rounded-full animate-pulse"></span>
+            San Juan, Argentina
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+            Cámara de Prestadores de Servicios Mineros y Energéticos
           </h1>
-          <p className="text-xl text-institutional-secondary mb-10 max-w-2xl leading-relaxed">
+          <p className="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
             Representamos empresas. Conectamos capacidades. Impulsamos desarrollo. Únase a la red de proveedores más sólida de la región.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-institutional-accent text-white px-8 py-3.5 rounded-lg hover:bg-institutional-accent/90 transition-all shadow-md font-semibold text-lg flex justify-center items-center">
+            <button className="bg-institutional-accent text-white px-8 py-3.5 rounded-lg hover:bg-institutional-accent/90 transition-all shadow-lg font-semibold text-lg flex justify-center items-center hover:scale-105 duration-200">
               Quiero asociarme <ChevronRight className="ml-2 w-5 h-5" />
             </button>
-            <button className="bg-white border-2 border-institutional-primary text-institutional-primary px-8 py-3.5 rounded-lg hover:bg-institutional-light transition-all shadow-sm font-semibold text-lg flex justify-center items-center">
+            <button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-3.5 rounded-lg hover:bg-white/20 transition-all shadow-sm font-semibold text-lg flex justify-center items-center">
               Explorar empresas
             </button>
+          </div>
+          <div className="flex items-center gap-8 mt-12 pt-8 border-t border-white/10">
+            <div><span className="text-3xl font-extrabold text-institutional-accent">80+</span><p className="text-sm text-gray-400">Empresas asociadas</p></div>
+            <div><span className="text-3xl font-extrabold text-institutional-accent">15</span><p className="text-sm text-gray-400">Rubros representados</p></div>
+            <div><span className="text-3xl font-extrabold text-institutional-accent">20+</span><p className="text-sm text-gray-400">Años de trayectoria</p></div>
           </div>
         </div>
       </div>
@@ -189,13 +198,14 @@ const Rubros = () => {
               <div className="h-40 bg-gray-200 relative overflow-hidden">
                 <div className="absolute inset-0 bg-institutional-primary/20 group-hover:bg-institutional-primary/10 transition-colors z-10"></div>
                 <img 
-                  src={`https://images.unsplash.com/photo-${1500000000000 + idx * 1000}?auto=format&fit=crop&w=800&q=80`} 
+                  src={[
+                    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80'
+                  ][idx]} 
                   alt={rubro.name}
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80';
-                  }}
-                />
+                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"/>
                 <div className="absolute top-4 left-4 z-20 w-12 h-12 bg-white rounded-lg flex items-center justify-center text-institutional-primary shadow-md">
                   {rubro.icon}
                 </div>
@@ -297,14 +307,14 @@ const Autoridades = () => {
 
 const Empresas = () => {
   const empresas = [
-    { name: 'Andes Minería', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><path d="M50 10 L10 90 L90 90 Z" fill="#2c2c2c"/><path d="M50 30 L30 90 L70 90 Z" fill="#4bb0d3"/></svg> },
-    { name: 'Cuyo Logística', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><rect x="20" y="20" width="60" height="60" rx="10" fill="#ac9f3c"/><circle cx="50" cy="50" r="20" fill="#fff"/></svg> },
-    { name: 'San Juan Perforaciones', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><polygon points="50,10 90,50 50,90 10,50" fill="#4bb0d3"/><circle cx="50" cy="50" r="15" fill="#2c2c2c"/></svg> },
-    { name: 'Cordillera Servicios', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><path d="M20 50 Q 50 10 80 50 T 20 50" fill="#ac9f3c"/><path d="M20 50 Q 50 90 80 50" fill="#2c2c2c"/></svg> },
-    { name: 'Valle Construcciones', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><rect x="10" y="40" width="80" height="20" fill="#4bb0d3"/><rect x="40" y="10" width="20" height="80" fill="#2c2c2c"/></svg> },
-    { name: 'Roca Ingeniería', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><circle cx="35" cy="50" r="25" fill="#ac9f3c" opacity="0.8"/><circle cx="65" cy="50" r="25" fill="#4bb0d3" opacity="0.8"/></svg> },
-    { name: 'Norte Maquinarias', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><polygon points="10,90 50,10 90,90 50,70" fill="#2c2c2c"/></svg> },
-    { name: 'Sur Energética', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><path d="M50 10 L90 40 L90 90 L10 90 L10 40 Z" fill="#4bb0d3"/><circle cx="50" cy="60" r="15" fill="#ac9f3c"/></svg> },
+    { name: 'Andina Ingeniería', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><path d="M60 15 L20 95 L100 95 Z" fill="#2c2c2c"/><path d="M60 35 L38 95 L82 95 Z" fill="#4bb0d3"/><path d="M60 55 L50 95 L70 95 Z" fill="#fff" opacity="0.5"/></svg> },
+    { name: 'TecnoMinera SRL', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><circle cx="60" cy="60" r="40" fill="none" stroke="#ac9f3c" strokeWidth="6"/><circle cx="60" cy="60" r="25" fill="#ac9f3c"/><rect x="55" y="20" width="10" height="80" fill="#2c2c2c" rx="3"/><rect x="20" y="55" width="80" height="10" fill="#2c2c2c" rx="3"/></svg> },
+    { name: 'SanJuan Drilling', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><polygon points="60,10 95,50 60,90 25,50" fill="#4bb0d3"/><circle cx="60" cy="50" r="18" fill="#fff"/><circle cx="60" cy="50" r="8" fill="#2c2c2c"/></svg> },
+    { name: 'Energía Cuyana', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><circle cx="60" cy="55" r="30" fill="#4bb0d3" opacity="0.3"/><path d="M60 25 L68 50 L55 42 L65 65 L50 50 Z" fill="#ac9f3c"/><path d="M25 85 Q60 65 95 85" fill="none" stroke="#2c2c2c" strokeWidth="4"/></svg> },
+    { name: 'Logística Cordillera', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><rect x="15" y="50" width="55" height="30" rx="4" fill="#2c2c2c"/><rect x="70" y="55" width="25" height="25" rx="4" fill="#2c2c2c"/><circle cx="35" cy="85" r="10" fill="#ac9f3c"/><circle cx="80" cy="85" r="10" fill="#ac9f3c"/><path d="M20 50 L40 30 L90 30 L95 55" fill="none" stroke="#4bb0d3" strokeWidth="4"/></svg> },
+    { name: 'Construcciones del Oeste', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><rect x="25" y="45" width="70" height="50" fill="#2c2c2c"/><path d="M20 45 L60 15 L100 45" fill="#4bb0d3"/><rect x="45" y="60" width="30" height="35" fill="#ac9f3c" rx="2"/></svg> },
+    { name: 'Norte Maquinarias', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><rect x="20" y="60" width="80" height="25" rx="5" fill="#2c2c2c"/><rect x="60" y="35" width="30" height="25" fill="#ac9f3c"/><circle cx="35" cy="90" r="12" fill="#4bb0d3"/><circle cx="85" cy="90" r="12" fill="#4bb0d3"/></svg> },
+    { name: 'Roca Ingeniería', logo: <svg viewBox="0 0 120 120" className="w-14 h-14 mb-3"><circle cx="40" cy="55" r="28" fill="#ac9f3c" opacity="0.7"/><circle cx="75" cy="55" r="28" fill="#4bb0d3" opacity="0.7"/><text x="57" y="62" textAnchor="middle" fill="#fff" fontSize="22" fontWeight="bold">R</text></svg> },
   ];
 
   return (
