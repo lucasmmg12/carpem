@@ -82,8 +82,8 @@ const Hero = () => {
     <section className="relative min-h-[100svh] flex items-center pt-20 pb-12 lg:pt-32 lg:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2070&q=80" 
-          alt="Operación Minera" 
+          src="/Mineria-San-Juan-1023x640.png" 
+          alt="Operación Minera San Juan" 
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/95 via-[#1a1a1a]/80 to-[#1a1a1a]/60 lg:bg-gradient-to-r lg:from-[#1a1a1a]/95 lg:via-[#1a1a1a]/80 lg:to-[#1a1a1a]/40"></div>
