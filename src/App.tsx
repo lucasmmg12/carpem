@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Building2, 
   Wrench, 
@@ -173,7 +173,11 @@ const QuienesSomos = () => {
           </div>
         </div>
       </div>
-   const Rubros = () => {
+    </section>
+  );
+};
+
+const Rubros = () => {
   const [selectedRubro, setSelectedRubro] = useState<any>(null);
 
   const rubros = [
