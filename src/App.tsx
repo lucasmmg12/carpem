@@ -10,7 +10,6 @@ import {
   Network,
   Menu,
   X,
-  MessageSquare,
   Send,
   ChevronRight,
   MapPin,
