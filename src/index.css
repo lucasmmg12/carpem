@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-institutional-primary: #0B1C3F;
-  --color-institutional-secondary: #64748B;
-  --color-institutional-accent: #C5A059;
-  --color-institutional-light: #F8FAFC;
-  --color-institutional-dark: #020617;
-  --font-sans: "Inter", sans-serif;
+  --color-institutional-primary: #2c2c2c; /* Gris oscuro / Carbón del texto */
+  --color-institutional-secondary: #4bb0d3; /* Celeste del logo */
+  --color-institutional-accent: #ac9f3c; /* Mostaza / Dorado del logo */
+  --color-institutional-light: #f4f8fa; /* Fondo claro azulado */
+  --color-institutional-dark: #1a1a1a;
+  --font-sans: "Open Sans", system-ui, sans-serif;
 }
 
 body {

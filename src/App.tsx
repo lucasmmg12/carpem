@@ -94,7 +94,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-institutional-primary leading-tight mb-6">
-            Una cámara empresaria al servicio del crecimiento minero de San Juan.
+            Cámara de Prestadores de Servicios Mineros y Energéticos de San Juan.
           </h1>
           <p className="text-xl text-institutional-secondary mb-10 max-w-2xl leading-relaxed">
             Representamos empresas. Conectamos capacidades. Impulsamos desarrollo. Únase a la red de proveedores más sólida de la región.
@@ -538,7 +538,7 @@ const Footer = () => {
               CARPEM
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Cámara empresaria de proveedores y servicios mineros. Impulsando el desarrollo sustentable de San Juan.
+              Cámara de Prestadores de Servicios Mineros y Energéticos de San Juan. Impulsando el desarrollo sustentable de la región.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-institutional-accent transition-colors">
