@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-institutional-primary: #0B1C3F;
+  --color-institutional-secondary: #64748B;
+  --color-institutional-accent: #C5A059;
+  --color-institutional-light: #F8FAFC;
+  --color-institutional-dark: #020617;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: white;
+  color: var(--color-institutional-dark);
+  -webkit-font-smoothing: antialiased;
+}
