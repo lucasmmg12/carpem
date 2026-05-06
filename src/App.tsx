@@ -27,13 +27,14 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
-            {/* Placeholder for Logo */}
-            <div className="text-institutional-primary font-bold text-2xl tracking-tight flex items-center gap-2">
-              <div className="w-8 h-8 bg-institutional-primary rounded-lg flex items-center justify-center">
-                <span className="text-white text-lg">C</span>
-              </div>
-              CARPEM
-            </div>
+            {/* Logo from public folder */}
+            <a href="#" className="flex items-center">
+              <img 
+                src="/2026-05-06_16-31.jpg" 
+                alt="Logo CARPEM" 
+                className="h-12 w-auto object-contain" 
+              />
+            </a>
           </div>
           
           <nav className="hidden md:flex space-x-8">
@@ -582,11 +583,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <div className="font-bold text-2xl tracking-tight flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-institutional-accent rounded-lg flex items-center justify-center">
-                <span className="text-white text-lg">C</span>
-              </div>
-              CARPEM
+            <div className="mb-6">
+              <img 
+                src="/2026-05-06_16-31.jpg" 
+                alt="Logo CARPEM" 
+                className="h-16 w-auto object-contain bg-white/10 rounded-lg p-2" 
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Cámara de Prestadores de Servicios Mineros y Energéticos de San Juan. Impulsando el desarrollo sustentable de la región.
