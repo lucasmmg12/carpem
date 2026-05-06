@@ -84,11 +84,11 @@ const Hero = () => {
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-institutional-light">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-          alt="Maquinaria Minera" 
-          className="w-full h-full object-cover opacity-10"
+          src="https://images.unsplash.com/photo-1574883395982-f673e440eece?auto=format&fit=crop&w=2070&q=80" 
+          alt="Minería a Cielo Abierto" 
+          className="w-full h-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-institutional-light via-institutional-light/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-institutional-light via-institutional-light/95 to-transparent"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -296,7 +296,16 @@ const Autoridades = () => {
 };
 
 const Empresas = () => {
-  const empresas = Array.from({ length: 8 }).map((_, i) => `Empresa Asociada ${i + 1}`);
+  const empresas = [
+    { name: 'Andes Minería', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><path d="M50 10 L10 90 L90 90 Z" fill="#2c2c2c"/><path d="M50 30 L30 90 L70 90 Z" fill="#4bb0d3"/></svg> },
+    { name: 'Cuyo Logística', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><rect x="20" y="20" width="60" height="60" rx="10" fill="#ac9f3c"/><circle cx="50" cy="50" r="20" fill="#fff"/></svg> },
+    { name: 'San Juan Perforaciones', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><polygon points="50,10 90,50 50,90 10,50" fill="#4bb0d3"/><circle cx="50" cy="50" r="15" fill="#2c2c2c"/></svg> },
+    { name: 'Cordillera Servicios', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><path d="M20 50 Q 50 10 80 50 T 20 50" fill="#ac9f3c"/><path d="M20 50 Q 50 90 80 50" fill="#2c2c2c"/></svg> },
+    { name: 'Valle Construcciones', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><rect x="10" y="40" width="80" height="20" fill="#4bb0d3"/><rect x="40" y="10" width="20" height="80" fill="#2c2c2c"/></svg> },
+    { name: 'Roca Ingeniería', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><circle cx="35" cy="50" r="25" fill="#ac9f3c" opacity="0.8"/><circle cx="65" cy="50" r="25" fill="#4bb0d3" opacity="0.8"/></svg> },
+    { name: 'Norte Maquinarias', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><polygon points="10,90 50,10 90,90 50,70" fill="#2c2c2c"/></svg> },
+    { name: 'Sur Energética', logo: <svg viewBox="0 0 100 100" className="w-12 h-12 mb-3"><path d="M50 10 L90 40 L90 90 L10 90 L10 40 Z" fill="#4bb0d3"/><circle cx="50" cy="60" r="15" fill="#ac9f3c"/></svg> },
+  ];
 
   return (
     <section id="empresas" className="py-20 bg-white">
@@ -316,10 +325,10 @@ const Empresas = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {empresas.map((empresa, idx) => (
-            <div key={idx} className="bg-institutional-light aspect-[3/2] rounded-lg flex flex-col items-center justify-center p-6 hover:bg-institutional-primary/5 transition-colors border border-gray-100 group cursor-pointer">
-              <Building2 className="w-8 h-8 text-institutional-secondary/50 group-hover:text-institutional-primary transition-colors mb-3" />
-              <span className="text-sm font-semibold text-institutional-secondary group-hover:text-institutional-primary text-center">
-                {empresa}
+            <div key={idx} className="bg-institutional-light aspect-[3/2] rounded-lg flex flex-col items-center justify-center p-6 hover:shadow-md transition-all border border-gray-100 group cursor-pointer">
+              {empresa.logo}
+              <span className="text-sm font-bold text-institutional-secondary group-hover:text-institutional-primary text-center transition-colors">
+                {empresa.name}
               </span>
             </div>
           ))}
