@@ -173,20 +173,42 @@ const QuienesSomos = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+   const Rubros = () => {
+  const [selectedRubro, setSelectedRubro] = useState<any>(null);
 
-const Rubros = () => {
   const rubros = [
-    { icon: <Building2 className="w-8 h-8" />, name: 'Obras Civiles', desc: 'Infraestructura, movimiento de suelos y construcciones.' },
-    { icon: <Settings className="w-8 h-8" />, name: 'Metalúrgica', desc: 'Fabricación, montaje y mantenimiento de estructuras.' },
-    { icon: <Truck className="w-8 h-8" />, name: 'Logística', desc: 'Transporte de cargas, personal y gestión de almacenes.' },
-    { icon: <Wrench className="w-8 h-8" />, name: 'Servicios Generales', desc: 'Catering, hotelería, limpieza y seguridad.' },
+    { 
+      name: 'Obras Civiles', 
+      desc: 'Infraestructura, movimiento de suelos y construcciones.', 
+      icon: <Building2 className="w-8 h-8" />,
+      image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+      contribucion: 'Desde la Cámara de Prestadores de Servicios Mineros y Energéticos de San Juan, impulsamos a las empresas de Obras Civiles garantizando su participación prioritaria en las licitaciones de los grandes operadores mineros. Brindamos asesoría en certificaciones de calidad exigidas por la minería internacional, y fomentamos alianzas estratégicas para que las empresas locales asuman proyectos de gran escala como diques de cola y campamentos base.'
+    },
+    { 
+      name: 'Metalúrgica', 
+      desc: 'Fabricación, montaje y mantenimiento de estructuras.', 
+      icon: <Settings className="w-8 h-8" />,
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+      contribucion: 'Para el sector Metalúrgico, CARPEM actúa como un puente directo con las áreas de mantenimiento mecánico de las mineras. Desarrollamos mesas de trabajo para sustituir importaciones, capacitando a talleres en soldadura de alta precisión y normativas de seguridad minera, asegurando el desarrollo cultural e industrial de cada pyme sanjuanina.'
+    },
+    { 
+      name: 'Logística', 
+      desc: 'Transporte de cargas, personal y gestión de almacenes.', 
+      icon: <Truck className="w-8 h-8" />,
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      contribucion: 'El transporte seguro es vital en la minería. CARPEM apoya a las empresas logísticas mediante acuerdos de provisión y programas de capacitación para choferes de alta montaña. Trabajamos con reguladores para agilizar permisos de cargas especiales, fortaleciendo el músculo empresarial del transporte corporativo minero.'
+    },
+    { 
+      name: 'Servicios Generales', 
+      desc: 'Catering, hotelería, limpieza y seguridad.', 
+      icon: <Wrench className="w-8 h-8" />,
+      image: 'https://images.unsplash.com/photo-1542037104-583d73f1f3b3?auto=format&fit=crop&w=800&q=80',
+      contribucion: 'Los Servicios Generales son esenciales para la vida en la cordillera. La Cámara de Prestadores de Servicios Mineros y Energéticos potencia a estas empresas mediante rondas de negocios con operadoras. Promovemos estándares de bromatología y seguridad ocupacional, profesionalizando los servicios para asegurar el bienestar de miles de mineros en campamentos.'
+    },
   ];
 
   return (
-    <section id="rubros" className="py-20 bg-institutional-light">
+    <section id="rubros" className="py-20 bg-institutional-light relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
           <div className="max-w-2xl">
@@ -203,30 +225,83 @@ const Rubros = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {rubros.map((rubro, idx) => (
-            <div key={idx} className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <div 
+              key={idx} 
+              onClick={() => setSelectedRubro(rubro)}
+              className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-gray-100"
+            >
               <div className="h-40 bg-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 bg-institutional-primary/20 group-hover:bg-institutional-primary/10 transition-colors z-10"></div>
+                <div className="absolute inset-0 bg-institutional-primary/0 group-hover:bg-institutional-primary/20 transition-all z-10 flex items-center justify-center">
+                  <span className="bg-white text-institutional-primary px-4 py-2 rounded-full font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all shadow-lg text-sm flex items-center gap-2">
+                    Ver Aporte CARPEM <ChevronRight className="w-4 h-4" />
+                  </span>
+                </div>
                 <img 
-                  src={[
-                    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-                    'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80',
-                    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
-                    'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80'
-                  ][idx]} 
+                  src={rubro.image} 
                   alt={rubro.name}
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"/>
-                <div className="absolute top-4 left-4 z-20 w-12 h-12 bg-white rounded-lg flex items-center justify-center text-institutional-primary shadow-md">
-                  {rubro.icon}
+                  className="w-full h-full object-cover filter grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+                />
+                <div className="absolute top-4 left-4 z-20 w-10 h-10 bg-white rounded-lg flex items-center justify-center text-institutional-primary shadow-md">
+                  {React.cloneElement(rubro.icon, { className: 'w-5 h-5' })}
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-institutional-primary mb-2">{rubro.name}</h3>
+                <h3 className="text-xl font-bold text-institutional-primary mb-2 group-hover:text-institutional-secondary transition-colors">{rubro.name}</h3>
                 <p className="text-sm text-institutional-secondary">{rubro.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal de Aporte CARPEM */}
+      {selectedRubro && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          <div 
+            className="absolute inset-0 bg-institutional-dark/80 backdrop-blur-sm animate-in fade-in"
+            onClick={() => setSelectedRubro(null)}
+          ></div>
+          
+          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden animate-in zoom-in-95 duration-200">
+            <button 
+              onClick={() => setSelectedRubro(null)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/10 hover:bg-black/20 text-white rounded-full flex items-center justify-center transition-colors backdrop-blur-md"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <div className="h-48 sm:h-64 relative overflow-hidden">
+              <img src={selectedRubro.image} alt={selectedRubro.name} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-institutional-primary/90 via-institutional-primary/50 to-transparent"></div>
+              <div className="absolute bottom-6 left-8 flex items-center gap-4">
+                <div className="bg-white p-3 rounded-lg shadow-lg text-institutional-primary">
+                  {React.cloneElement(selectedRubro.icon, { className: 'w-8 h-8' })}
+                </div>
+                <h3 className="text-3xl font-extrabold text-white">{selectedRubro.name}</h3>
+              </div>
+            </div>
+            
+            <div className="p-8 bg-white">
+              <h4 className="font-bold text-institutional-accent mb-4 flex items-center gap-2 text-lg">
+                <span className="w-2 h-2 bg-institutional-accent rounded-full"></span>
+                ¿Cómo contribuye CARPEM a este sector?
+              </h4>
+              <p className="text-gray-700 text-base leading-relaxed mb-6">
+                {selectedRubro.contribucion}
+              </p>
+              
+              <div className="mt-auto pt-4 border-t border-gray-100 flex gap-4">
+                <button className="flex-1 py-3 bg-institutional-accent hover:bg-institutional-accent/90 text-white font-bold rounded-lg transition-colors shadow-sm">
+                  Asociar mi Empresa
+                </button>
+                <button onClick={() => setSelectedRubro(null)} className="py-3 px-6 bg-institutional-light hover:bg-gray-200 text-institutional-primary font-bold rounded-lg transition-colors border border-gray-200">
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
@@ -279,15 +354,41 @@ const Beneficios = () => {
 };
 
 const Autoridades = () => {
+  const [selectedAutoridad, setSelectedAutoridad] = useState<any>(null);
+
   const autoridades = [
-    { name: 'Ing. Roberto Silva', role: 'Presidente', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80', company: 'Silva Obras Civiles' },
-    { name: 'Lic. Mariana Costa', role: 'Vicepresidenta', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', company: 'Logística Sur' },
-    { name: 'Dr. Carlos Mendoza', role: 'Secretario General', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80', company: 'Mendoza & Asoc.' },
-    { name: 'Ing. Patricia Ruiz', role: 'Tesorera', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80', company: 'Metalúrgica Ruiz' },
+    { 
+      name: 'Ing. Roberto Silva', 
+      role: 'Presidente', 
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80', 
+      company: 'Silva Obras Civiles',
+      trayectoria: 'Ingeniero Civil con más de 25 años de experiencia en el desarrollo de grandes infraestructuras mineras en la región andina. Fundador de Silva Obras Civiles, ha liderado proyectos llave en mano para las operadoras más importantes del país. En CARPEM, se ha enfocado en fortalecer la cadena de valor local y promover políticas de compre sanjuanino.'
+    },
+    { 
+      name: 'Lic. Mariana Costa', 
+      role: 'Vicepresidenta', 
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', 
+      company: 'Logística Sur',
+      trayectoria: 'Licenciada en Administración de Empresas con especialización en Logística Internacional. Dirige Logística Sur desde hace 15 años, optimizando el transporte de cargas peligrosas y equipos pesados hacia proyectos mineros de alta montaña. Su gestión en la cámara impulsa la modernización y sustentabilidad del transporte corporativo.'
+    },
+    { 
+      name: 'Dr. Carlos Mendoza', 
+      role: 'Secretario General', 
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80', 
+      company: 'Mendoza & Asoc.',
+      trayectoria: 'Abogado especialista en Derecho Ambiental y Minero. Socio fundador del estudio Mendoza & Asoc., brinda asesoría legal estratégica a contratistas y empresas de exploración. Su rol en CARPEM es vital para la mediación institucional, la redacción de convenios de colaboración y la asesoría jurídica a nuestros asociados.'
+    },
+    { 
+      name: 'Ing. Patricia Ruiz', 
+      role: 'Tesorera', 
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80', 
+      company: 'Metalúrgica Ruiz',
+      trayectoria: 'Ingeniera Metalúrgica de segunda generación. Su empresa familiar es pionera en la fabricación de estructuras y piezas de desgaste para molinos mineros. Como Tesorera, garantiza la transparencia financiera de la institución y promueve programas de financiamiento blando para pymes proveedoras del sector.'
+    },
   ];
 
   return (
-    <section id="autoridades" className="py-20 bg-institutional-light">
+    <section id="autoridades" className="py-20 bg-institutional-light relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold text-institutional-primary mb-4">Comisión Directiva</h2>
@@ -299,17 +400,76 @@ const Autoridades = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {autoridades.map((autoridad, idx) => (
-            <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 text-center pb-6">
-              <div className="h-48 overflow-hidden mb-4">
-                <img src={autoridad.image} alt={autoridad.name} className="w-full h-full object-cover object-top" />
+            <div 
+              key={idx} 
+              onClick={() => setSelectedAutoridad(autoridad)}
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 text-center pb-6 cursor-pointer group transform hover:-translate-y-2 duration-300"
+            >
+              <div className="h-48 overflow-hidden mb-4 relative">
+                <div className="absolute inset-0 bg-institutional-primary/0 group-hover:bg-institutional-primary/20 transition-all z-10 flex items-center justify-center">
+                  <span className="bg-white text-institutional-primary px-4 py-2 rounded-full font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all shadow-lg text-sm flex items-center gap-2">
+                    Ver Perfil <ChevronRight className="w-4 h-4" />
+                  </span>
+                </div>
+                <img src={autoridad.image} alt={autoridad.name} className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <h3 className="text-xl font-bold text-institutional-primary px-4">{autoridad.name}</h3>
+              <h3 className="text-xl font-bold text-institutional-primary px-4 group-hover:text-institutional-secondary transition-colors">{autoridad.name}</h3>
               <p className="text-institutional-accent font-medium mt-1 mb-2 px-4">{autoridad.role}</p>
-              <p className="text-sm text-institutional-secondary px-4">{autoridad.company}</p>
+              <p className="text-sm text-gray-500 px-4">{autoridad.company}</p>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal de Perfil Profesional */}
+      {selectedAutoridad && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          {/* Overlay oscuro */}
+          <div 
+            className="absolute inset-0 bg-institutional-dark/80 backdrop-blur-sm animate-in fade-in"
+            onClick={() => setSelectedAutoridad(null)}
+          ></div>
+          
+          {/* Contenedor del Modal */}
+          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden animate-in zoom-in-95 duration-200">
+            <button 
+              onClick={() => setSelectedAutoridad(null)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/10 hover:bg-black/20 text-white rounded-full flex items-center justify-center transition-colors backdrop-blur-md"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <div className="flex flex-col sm:flex-row">
+              <div className="sm:w-2/5 h-64 sm:h-auto relative">
+                <img src={selectedAutoridad.image} alt={selectedAutoridad.name} className="w-full h-full object-cover object-top" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent sm:bg-gradient-to-r sm:from-transparent sm:to-black/20"></div>
+              </div>
+              <div className="sm:w-3/5 p-8 flex flex-col justify-center bg-white">
+                <div className="text-institutional-accent font-bold tracking-wider text-sm uppercase mb-1">{selectedAutoridad.role}</div>
+                <h3 className="text-3xl font-extrabold text-institutional-primary mb-2">{selectedAutoridad.name}</h3>
+                <div className="flex items-center text-institutional-secondary mb-6 pb-6 border-b border-gray-100">
+                  <Building2 className="w-4 h-4 mr-2" />
+                  <span className="font-medium">{selectedAutoridad.company}</span>
+                </div>
+                
+                <h4 className="font-bold text-institutional-primary mb-3 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-institutional-accent rounded-full"></span>
+                  Trayectoria Profesional
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  {selectedAutoridad.trayectoria}
+                </p>
+                
+                <div className="mt-auto pt-2">
+                  <button onClick={() => setSelectedAutoridad(null)} className="w-full py-3 bg-institutional-light hover:bg-gray-200 text-institutional-primary font-bold rounded-lg transition-colors border border-gray-200">
+                    Cerrar Perfil
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
